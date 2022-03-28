@@ -1,0 +1,85 @@
+.backdrop,
+.backdrop2,
+.backdrop3 {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(
+    -60deg,
+    rgba(85, 129, 241, 1) 50%,
+    rgba(17, 83, 252, 1) 50%
+  );
+  bottom: 0;
+  left: -50%;
+  opacity: 0.5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.backdrop2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+
+.backdrop3 {
+  animation-duration: 5s;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgb(0 0 0 / 25%);
+  box-sizing: border-box;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  padding: 60px 60px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 10px 34px -15px rgb(0 0 0 / 24%);
+}
+.btnBox {
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.button,
+.btnActive {
+  background-color: #ffffff;
+  border: none;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
+    "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 7px 15px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  user-select: none;
+  width: auto;
+  transition: background 200ms ease-in-out, color 200ms ease-in-out,
+    border 200ms ease-in-out;
+}
+.btnActive {
+  border-bottom: 3px solid rgba(85, 129, 241, 1);
+}
