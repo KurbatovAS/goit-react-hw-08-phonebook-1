@@ -1,5 +1,4 @@
 .label {
-  font-family: "Lato", Arial, sans-serif;
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
@@ -9,12 +8,10 @@
 .title {
   line-height: 1.5;
   font-weight: 300;
-  font-family: "Lato", Arial, sans-serif;
   color: #000;
   text-align: center;
 }
 .input {
-  font-family: "Lato", Arial, sans-serif;
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -45,8 +42,7 @@
   box-sizing: border-box;
   color: #ffffff;
   display: flex;
-  font-family: Phantomsans, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   justify-content: center;
   line-height: 1em;
   width: 100%;

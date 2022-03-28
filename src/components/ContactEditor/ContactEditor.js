@@ -5,7 +5,7 @@ import style from "./ContactEditor.module.css";
 import { contactsSelectors } from "../../redux/contacts";
 import { contactsOperations } from "../../redux/contacts";
 
-function ContactEditor() {
+function ContactEditor({ onSave }) {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const contacts = useSelector(contactsSelectors.getVisibleContacts);
@@ -27,12 +27,19 @@ function ContactEditor() {
       dispatch(contactsOperations.addContact({ name, number }));
     }
 
-    setName("");
     setNumber("");
+    setName("");
+    onSave();
   };
 
   return (
     <form className={style.form} onSubmit={handleSubmit}>
+      <img
+        className={style.avatar}
+        alt="avatar"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReK6pUGk66nxuoUjAgPyXQ55neCkfFdO8EDjah4hqBn_-VrQKYo5oI_citL5mS9_ZWgaQ&usqp=CAU"
+      />
+
       <label className={style.label}>
         Name
         <input

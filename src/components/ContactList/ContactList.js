@@ -1,7 +1,7 @@
 import Contact from "../Todo";
 import { useSelector, useDispatch } from "react-redux";
 import { contactsOperations, contactsSelectors } from "../../redux/contacts";
-import styles from "./ContactList.module.css";
+import style from "./ContactList.module.css";
 
 export default function TodoList() {
   const dispatch = useDispatch();
@@ -13,9 +13,9 @@ export default function TodoList() {
     dispatch(contactsOperations.toggleFavorite(id));
 
   return (
-    <ul className={styles.list}>
+    <ul className={style.list}>
       {contacts.map(({ id, name, number, favorite }) => (
-        <li key={id} className={favorite ? styles.favorite : styles.item}>
+        <li key={id} className={favorite ? style.favorite : style.item}>
           <Contact
             name={name}
             number={number}
