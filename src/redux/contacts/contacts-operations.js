@@ -6,9 +6,6 @@ import {
   deleteContactRequest,
   deleteContactSuccess,
   deleteContactError,
-  toggleFavoriteRequest,
-  toggleFavoriteSuccess,
-  toggleFavoriteError,
   fetchContactsRequest,
   fetchContactsSuccess,
   fetchContactsError,
@@ -34,7 +31,6 @@ const addContact = ({ name, number }) => (dispatch) => {
     number,
     favorite: false,
   };
-  console.log(contact);
   dispatch(addContactRequest());
 
   axios
@@ -51,22 +47,9 @@ const deleteContact = (contactId) => (dispatch) => {
     .then(() => dispatch(deleteContactSuccess(contactId)))
     .catch((error) => dispatch(deleteContactError(error.message)));
 };
-
-const toggleFavorite = ({ id, favorite }) => (dispatch) => {
-  const update = { favorite };
-
-  dispatch(toggleFavoriteRequest());
-
-  axios
-    .patch(`/contacts/${id}`, update)
-    .then(({ data }) => dispatch(toggleFavoriteSuccess(data)))
-    .catch((error) => dispatch(toggleFavoriteError(error.message)));
-};
-
 const ContactsOperations = {
   fetchContacts,
   addContact,
   deleteContact,
-  toggleFavorite,
 };
 export default ContactsOperations;

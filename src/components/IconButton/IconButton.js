@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import styles from "./IconButton.module.css";
+import style from "./IconButton.module.css";
 
 export default function IconButton({
   children = null,
@@ -9,7 +9,7 @@ export default function IconButton({
   return (
     <button
       type="button"
-      className={styles.button}
+      className={style.button}
       onClick={onClick}
       {...otherProps}
     >

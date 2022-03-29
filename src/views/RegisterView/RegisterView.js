@@ -29,7 +29,7 @@ export default function RegisterView() {
   };
 
   return (
-    <div>
+    <div className={style.content}>
       <h1 className={style.title}>Sign In</h1>
 
       <form onSubmit={handleSubmit} className={style.form} autoComplete="on">

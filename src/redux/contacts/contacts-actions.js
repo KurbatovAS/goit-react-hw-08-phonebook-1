@@ -20,12 +20,4 @@ export const deleteContactSuccess = createAction(
 );
 export const deleteContactError = createAction("contacts/deleteContactError");
 
-export const toggleFavoriteRequest = createAction(
-  "contacts/toggleFavoriteRequest"
-);
-export const toggleFavoriteSuccess = createAction(
-  "contacts/toggleFavoriteSuccess"
-);
-export const toggleFavoriteError = createAction("contacts/toggleFavoriteError");
-
 export const changeFilter = createAction("contacts/changeFilter");

@@ -9,15 +9,6 @@ const getTotalContactCount = (state) => {
   const contacts = getAllContacts(state);
   return contacts.length;
 };
-const getFavoriteContactsCount = createSelector(
-  [getAllContacts],
-  (contacts) => {
-    return contacts.reduce(
-      (total, contact) => (contact.favorite ? total + 1 : total),
-      0
-    );
-  }
-);
 
 const getVisibleContacts = createSelector(
   [getAllContacts, getFilter],
@@ -36,6 +27,5 @@ const contactsSelectors = {
   getAllContacts,
   getVisibleContacts,
   getTotalContactCount,
-  getFavoriteContactsCount,
 };
 export default contactsSelectors;
